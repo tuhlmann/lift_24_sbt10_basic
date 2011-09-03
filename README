@@ -1,0 +1,8 @@
+Lift 2.4 and DBT 0.10 Basic Example Template
+
+> git clone git@github.com:tuhlmann/lift_24_sbt10_basic.git
+> cd lift_24_sbt10_basic
+> sbt
+> jetty-run
+
+Your webapp is running on http://localhost:8080
