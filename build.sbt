@@ -4,9 +4,6 @@ scalaVersion := "2.9.0-1"
 
 seq(webSettings :_*)
 
-// If using JRebel uncomment next line
-jettyScanDirs := Nil
-
 resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
 libraryDependencies ++= {
@@ -27,3 +24,7 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "0.9.26" % "compile->default"
 )
 
+// If using JRebel uncomment next line
+jettyScanDirs := Nil
+
+temporaryWarPath <<= (sourceDirectory in Compile)(_ / "webapp")
