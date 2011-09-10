@@ -1,13 +1,21 @@
+organization := "com.agynamix"
+
 name := "LiftBasic"
 
-scalaVersion := "2.9.0-1"
+version := "0.1"
+
+scalaVersion := "2.9.1"
+
+// scalacOptions += "-deprecation"
 
 seq(webSettings :_*)
 
 resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
+resolvers += "Lift Snapshots" at "http://scala-tools.org/repo-snapshots/"
+
 libraryDependencies ++= {
-    val liftVersion = "2.4-M3"
+    val liftVersion = "2.4-M4"
     Seq(
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile->default",
     "net.liftweb" %% "lift-mapper" % liftVersion % "compile->default",
@@ -23,6 +31,8 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.2.138",
   "ch.qos.logback" % "logback-classic" % "0.9.26" % "compile->default"
 )
+
+// jettyClasspaths <<= (jettyClasspaths, sourceDirectory).map((j, src) => j.copy(classpath = j.classpath +++ src / "development" / "resources"))
 
 // If using JRebel uncomment next line
 jettyScanDirs := Nil
