@@ -32,5 +32,13 @@ class User extends MegaProtoUser[User] {
     override def textareaCols = 50
     override def displayName = "Personal Essay"
   }
+
+  // define an additional field for a personal essay
+  object extraComments extends MappedTextarea(this, 2048) {
+    override def textareaRows  = 12
+    override def textareaCols = 40
+    override def displayName = "Personal Essay"
+  }
+  
 }
 
