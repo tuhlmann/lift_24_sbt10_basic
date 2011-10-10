@@ -37,7 +37,7 @@ class User extends MegaProtoUser[User] {
   object extraComments extends MappedTextarea(this, 2048) {
     override def textareaRows  = 200
     override def textareaCols = 100
-    override def displayName = "A very much different text from msrv"
+    override def displayName = "I changed my mind"
   }
   
 }
